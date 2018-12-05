@@ -14,10 +14,12 @@ export class MapService {
     private http: HttpClient
   ) { }
 
+  // 测试
   test(){
     return this.http.get(appUrl + "test/test")
     .pipe(
-      tap(_ => console.log(_))
+      tap(_ => console.log(_)),
+      catchError(null)
     ); 
   }
 
